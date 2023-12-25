@@ -11,7 +11,7 @@ body {
 main {
   background: rgb(84, 184, 51);
   border: 10px solid #fff;
-  margin: 200px 500px;
+  margin: 100px 500px;
   border-radius: 20px;
   padding: 50px 20px;
 }
@@ -54,6 +54,9 @@ button:focus {
   color: red;
 }
 
+.underliP {
+  text-decoration: underline;
+}
 p {
   margin-top: 20px;
   text-align: center;

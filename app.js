@@ -6,6 +6,9 @@ let computerChoice;
 let userChoice;
 let result;
 
+let playerScore = 0;
+let computerScore = 0;
+
 let userName = prompt("Enter your name for this game");
 
 possibleChoices.forEach((possibleChoice) =>
@@ -14,6 +17,7 @@ possibleChoices.forEach((possibleChoice) =>
     userChoiceDisplay.innerHTML = toNormalCase(userChoice);
     generateComputerChoice();
     getResult();
+    updateScore();
   })
 );
 
@@ -54,17 +58,22 @@ getResult = () => {
   computerChoice === userChoice
     ? (result = "It's a draw game!")
     : computerChoice === "rock" && userChoice === "paper"
-    ? (result = userName + " won!")
+    ? ((result = userName + " won!"), playerScore++)
     : computerChoice === "rock" && userChoice === "scissors"
-    ? (result = userName + " losts!")
+    ? ((result = userName + " losts!"), computerScore++)
     : computerChoice === "paper" && userChoice === "scissors"
-    ? (result = userName + " won!")
+    ? ((result = userName + " won!"), playerScore++)
     : computerChoice === "paper" && userChoice === "rock"
-    ? (result = userName + " losts!")
+    ? ((result = userName + " losts!"), computerScore++)
     : computerChoice === "scissors" && userChoice === "rock"
-    ? (result = userName + " won!")
+    ? ((result = userName + " won!"), playerScore++)
     : computerChoice === "scissors" && userChoice === "paper"
-    ? (result = userName + " losts!")
+    ? ((result = userName + " losts!"), computerScore++)
     : (result = "");
   resultDisplay.innerHTML = toNormalCase(result);
 };
+
+function updateScore() {
+  document.getElementById("playerScore").innerText = playerScore;
+  document.getElementById("computerScore").innerText = computerScore;
+}
