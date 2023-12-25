@@ -6,7 +6,7 @@ let computerChoice;
 let userChoice;
 let result;
 
-// let userName = prompt("Enter your name for this game");
+let userName = prompt("Enter your name for this game");
 
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener("click", (e) => {
@@ -52,19 +52,19 @@ const generateComputerChoice = () => {
 
 getResult = () => {
   computerChoice === userChoice
-    ? (result = "It's draw game!")
+    ? (result = "It's a draw game!")
     : computerChoice === "rock" && userChoice === "paper"
-    ? (result = "You win!")
+    ? (result = userName + " won!")
     : computerChoice === "rock" && userChoice === "scissors"
-    ? (result = "You lost!")
+    ? (result = userName + " losts!")
     : computerChoice === "paper" && userChoice === "scissors"
-    ? (result = "You win!")
+    ? (result = userName + " won!")
     : computerChoice === "paper" && userChoice === "rock"
-    ? (result = "You lose!")
-    : computerChoice === "scissors" && userChoice === "rock"
-    ? (result = "You win!")
+    ? (result = userName + " losts!")
+    : computerChoice === "Olascissors" && userChoice === "rock"
+    ? (result = userName + " won!")
     : computerChoice === "scissors" && userChoice === "paper"
-    ? (result = "You lose!")
+    ? (result = userName + " losts!")
     : (result = "");
   resultDisplay.innerHTML = toNormalCase(result);
 };
