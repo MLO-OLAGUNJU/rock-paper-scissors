@@ -5,12 +5,12 @@ const possibleChoices = document.querySelectorAll("button");
 let userChoice;
 
 possibleChoices.forEach((possibleChoice) =>
-  possibleChoice.addEventListener("click", () => {
+  possibleChoice.addEventListener("click", (e) => {
     userChoice = e.target.id;
-    userChoiceDisplay.innerHTML = userChoice;
+    userChoiceDisplay.innerHTML = toNormalCase(userChoice);
   })
 );
 
-const paperButton = document.getElementById("paper");
-const scissorsButton = document.getElementById("scissors");
-const rockButton = document.getElementById("rock");
+function toNormalCase(userChoice) {
+  return `${userChoice.charAt(0).toUpperCase()}${userChoice.slice(1)}`;
+}
