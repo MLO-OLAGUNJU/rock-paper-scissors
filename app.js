@@ -36,10 +36,3 @@ const generateComputerChoice = () => {
 
   computerChoiceDisplay.innerHTML = toNormalCase(computerChoice);
 };
-
-// an array for ifykyk
-// const computerChoiceList = ["rock", "paper", "scissors"];
-
-// const generateNumber =;
-
-// console.log(generateComputerChoice());
