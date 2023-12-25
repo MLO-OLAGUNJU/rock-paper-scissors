@@ -26,13 +26,22 @@ const generateComputerChoice = () => {
   //or
   //const randomNumber = Math.floor(Math.random() * possibleChoices + 1);
 
-  if (randomNumber === 1) {
+  /* if (randomNumber === 1) {
     computerChoice = "rock";
   } else if (randomNumber === 2) {
     computerChoice = "paper";
   } else if (randomNumber === 3) {
     computerChoice = "scissors";
-  }
+  } */
+
+  // or you can tenary operators
+  randomNumber === 1
+    ? (computerChoice = "rock")
+    : randomNumber === 2
+    ? (computerChoice = "paper")
+    : randomNumber === 3
+    ? (computerChoice = "rock")
+    : (computerChoice = "");
 
   computerChoiceDisplay.innerHTML = toNormalCase(computerChoice);
 };
