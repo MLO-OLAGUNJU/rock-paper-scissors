@@ -61,7 +61,7 @@ getResult = () => {
     ? (result = userName + " won!")
     : computerChoice === "paper" && userChoice === "rock"
     ? (result = userName + " losts!")
-    : computerChoice === "Olascissors" && userChoice === "rock"
+    : computerChoice === "scissors" && userChoice === "rock"
     ? (result = userName + " won!")
     : computerChoice === "scissors" && userChoice === "paper"
     ? (result = userName + " losts!")
