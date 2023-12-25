@@ -4,12 +4,16 @@ const resultDisplay = document.getElementById("result");
 const possibleChoices = document.querySelectorAll("button");
 let computerChoice;
 let userChoice;
+let result;
+
+// let userName = prompt("Enter your name for this game");
 
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener("click", (e) => {
     userChoice = e.target.id;
     userChoiceDisplay.innerHTML = toNormalCase(userChoice);
     generateComputerChoice();
+    getResult();
   })
 );
 
@@ -40,8 +44,27 @@ const generateComputerChoice = () => {
     : randomNumber === 2
     ? (computerChoice = "paper")
     : randomNumber === 3
-    ? (computerChoice = "rock")
+    ? (computerChoice = "scissors")
     : (computerChoice = "");
 
   computerChoiceDisplay.innerHTML = toNormalCase(computerChoice);
+};
+
+getResult = () => {
+  computerChoice === userChoice
+    ? (result = "It's draw game!")
+    : computerChoice === "rock" && userChoice === "paper"
+    ? (result = "You win!")
+    : computerChoice === "rock" && userChoice === "scissors"
+    ? (result = "You lost!")
+    : computerChoice === "paper" && userChoice === "scissors"
+    ? (result = "You win!")
+    : computerChoice === "paper" && userChoice === "rock"
+    ? (result = "You lose!")
+    : computerChoice === "scissors" && userChoice === "rock"
+    ? (result = "You win!")
+    : computerChoice === "scissors" && userChoice === "paper"
+    ? (result = "You lose!")
+    : (result = "");
+  resultDisplay.innerHTML = toNormalCase(result);
 };
